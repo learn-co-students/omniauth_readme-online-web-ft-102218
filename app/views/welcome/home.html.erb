@@ -1,1 +1,9 @@
-<%# Add the Facebook login link here %>
+<% if session[:user_id] %>
+  <h2>Username: <%= @user.name %></h2>
+  <h2>Email: <%= @user.email %></h2>
+  <h2>Github Client ID: <%= @user.client_id %></h2>
+<% else %>
+  <%= link_to('Log in with Github', '/auth/github') %>
+<% end %>
+
+
